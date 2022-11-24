@@ -10,6 +10,10 @@ class TodoRepository @Inject constructor(private val todoDatabaseDao: TodoDataba
         return todoDatabaseDao.getAll()
     }
 
+    suspend fun  getById(id:Int) : TodoModel {
+        return todoDatabaseDao.getById(id)
+    }
+
     suspend fun addTodo(todoModel: TodoModel) {
         todoDatabaseDao.insert(todoModel)
     }

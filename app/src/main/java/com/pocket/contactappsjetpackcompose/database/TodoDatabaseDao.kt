@@ -10,7 +10,7 @@ interface TodoDatabaseDao {
     suspend fun getAll(): List<TodoModel>
 
     @Query("SELECT * from todo_list where todId = :id")
-    suspend fun getById(id: Int): TodoModel?
+    suspend fun getById(id: Int): TodoModel
 
     @Insert
     suspend fun insert(item: TodoModel)
